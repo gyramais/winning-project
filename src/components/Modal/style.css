@@ -1,0 +1,82 @@
+::-webkit-scrollbar          { /* 1 */ }
+::-webkit-scrollbar-button       { /* 2 */ }
+::-webkit-scrollbar-track        { /* 3 */ }
+::-webkit-scrollbar-track-piece  { /* 4 */ }
+::-webkit-scrollbar-thumb        { /* 5 */ }
+::-webkit-scrollbar-corner       { /* 6 */ }
+::-webkit-resizer                { /* 7 */ }
+
+.body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+}
+  
+.body::-webkit-scrollbar-track {
+    background: #C9D3CC;        /* color of the tracking area */
+}
+  
+.body::-webkit-scrollbar-thumb {
+    background-color: #0BB599;    /* color of the scroll thumb */
+    border-radius: 20px;    
+    height: 20px;   /* roundness of the scroll thumb */
+}
+
+.ReactModal__Content{
+    padding: 0 !important;
+    border-radius: 20px !important;
+}
+
+.ReactModal__Content .modal-header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #003930;   
+    color: #C9D3CC;
+    padding: 24px 40px;
+}
+.modal-header h2{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+}
+.integrations-tabs{
+    padding: 20px 40px;
+}
+.integrations-tabs ul{
+    display: flex;
+}
+.integrations-tabs ul li{
+    margin-right: 32px;
+    text-align: left;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+
+    display: flex;
+    align-items: center;
+
+    color: #C9D3CC;
+}
+.integrations{
+    display: flex;
+    padding: 20px 40px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+ }
+.integration-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    margin-right: 1rem;
+    width: 148px;
+    height: 148px;
+    background: #FAFAFA;
+    border: 1px solid #C9D3CC;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
