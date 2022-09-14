@@ -4,10 +4,6 @@ import Form from '../Form/Form'
 
 import "./style.css"
 
-const customStyles = {
-  
-};
-
 const integrationsImagens = [
   'src/assets/santander 1.png',
   'src/assets/itau.png',
@@ -24,17 +20,18 @@ const integrationsImagens = [
 // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#root');
 
-
-const widgetModal = ( {isOpen:modalIsOpen, closeModal}) => {
-  const [ step, setStep ] = useState(1)
-  const acessarOForm = ()=>{
-
+//Add tabs da MUI
+const widgetModal:React.FC<{ isOpen: boolean, closeModal: Function}> = ( {isOpen:modalIsOpen, closeModal}) => {
+  const [ step, setStep ] = useState(0)
+  const [ params, setParams ] = useState(0)
+  const acessarForm = (step)=>{
+    step
   }
 
   return (
     <Modal
     isOpen={modalIsOpen}
-    style={customStyles}
+    //style={customStyles}
     preventScroll
     contentLabel="Example Modal"
   >
@@ -57,7 +54,7 @@ const widgetModal = ( {isOpen:modalIsOpen, closeModal}) => {
         { 
         integrationsImagens.map((el)=>(
           <div className='integration-item'>
-            <img src={el} alt="integration item" onClick={()=>closeModal()} />
+            <img src={el} alt="integration item" onClick={()=>} />
           </div>  
         ))
         }

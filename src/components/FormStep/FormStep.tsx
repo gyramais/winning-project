@@ -1,6 +1,7 @@
 import { Button, Input, TextField } from "@mui/material"
 import { useState } from "react"
 import InputMask from 'react-input-mask';
+import Modal from '../Modal/Modal'
 
 const fields = [
   {
@@ -55,6 +56,26 @@ const FormStep: React.FC = () => {
 
     nextField();
   }
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+    },
+  };
+
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   return (
     <div className="text-center">
@@ -80,8 +101,14 @@ const FormStep: React.FC = () => {
               required
             />
           </InputMask>
-          <button type="submit">OK</button>
+          <button /*type="submit"*/ onClick={()=>openModal()}>OK</button>
       </form>
+      <Modal
+        isOpen={modalIsOpen}
+        closeModal={closeModal}
+        //style={customStyles}
+        //preventScroll
+      />
     </div>
   )
 }
