@@ -1,0 +1,30 @@
+.form-content{
+    display: flex;
+    padding: 20px 40px;
+}
+.text-info{
+    background: #E6F7FF;
+    border: 1px solid #69C0FF;
+    border-radius: 10px;
+    padding: 8px 38px;
+}
+.integration-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    margin-right: 3rem;
+    background: #FAFAFA;
+    border: 1px solid #C9D3CC;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+
+    width: 104px;
+    height: 104px;
+    left: 304px;
+    top: 368px;
+
+    background: #F6F8F7;
+    border: 2px solid #0BB599;
+    border-radius: 20px;
+}
