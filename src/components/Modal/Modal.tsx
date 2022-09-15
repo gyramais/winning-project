@@ -21,15 +21,13 @@ const integrationsImagens = [
 Modal.setAppElement('#root');
 
 //Add tabs da MUI
-const widgetModal:React.FC<{ isOpen: boolean, closeModal: Function}> = ( {isOpen:modalIsOpen, closeModal}) => {
+const IntegrationModal:React.FC<{ isOpen: boolean, closeModal: Function}> = ( {isOpen:modalIsOpen, closeModal}) => {
   const [ step, setStep ] = useState(0)
   const [ params, setParams ] = useState(0)
 
   return (
     <Modal
     isOpen={modalIsOpen}
-    //style={customStyles}
-    preventScroll
     contentLabel="Example Modal"
   >
     <>
@@ -69,4 +67,4 @@ const widgetModal:React.FC<{ isOpen: boolean, closeModal: Function}> = ( {isOpen
   );
 }
 
-export default widgetModal
+export default IntegrationModal
