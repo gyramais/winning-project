@@ -2,7 +2,7 @@ import { Button, Input, TextField } from "@mui/material"
 import { useState } from "react"
 import InputMask from 'react-input-mask';
 import Modal from '../Modal/Modal'
-
+import Img from '../../assets/call-to-action.png'
 
 type Props = {
   onFinish: () => any
@@ -11,7 +11,8 @@ type Props = {
 const CallToActionStep: React.FC<Props> = ({onFinish}) => {
   return (
     <div className="flex flex-row align-middle w-full h-full" onClick={onFinish}>
-      <div className="flex-1 flex flex-col justify-center">
+      <img className="m-auto" src={Img}></img>
+      {/* <div className="flex-1 flex flex-col justify-center">
         <h1 className="">
           Procurando crédito rápido para impulsionar o seu negócio?
         </h1>
@@ -23,7 +24,7 @@ const CallToActionStep: React.FC<Props> = ({onFinish}) => {
 
       <div className="flex-1 text-right">
         gmm
-      </div>
+      </div> */}
     </div>
   )
 }
