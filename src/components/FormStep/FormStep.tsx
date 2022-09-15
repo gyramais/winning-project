@@ -1,4 +1,5 @@
-import { Button, Input, TextField } from "@mui/material"
+import { Button, CircularProgress, Input, TextField, Typography } from "@mui/material"
+import { Box } from "@mui/system";
 import { useState } from "react"
 import InputMask from 'react-input-mask';
 import Modal from '../Modal/Modal'
@@ -87,6 +88,38 @@ const FormStep: React.FC = () => {
             className="flex gap-x-2 justify-center mt-24 w-full px-8" 
             onSubmit={submitForm}
             >
+              <Box sx={{ position: 'relative', display: 'inline-flex', marginTop: '-6px' }}>
+              <CircularProgress   
+                className="mr-2"
+                  size={64}
+                  variant="determinate"
+                  value={(currentField + 1) * 25} 
+                  thickness={5}
+              />
+
+                <Box
+                  sx={{
+                    top: 0,
+                    left: 0,
+                    bottom: 0,
+                    right: 0,
+                    position: 'absolute',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    height: 64,
+                    width: 64
+                  }}
+                >
+                  <Typography
+                    variant="caption"
+                    component="div"
+                    color="text.secondary"
+                  >{currentField + 1} de 4</Typography>
+                </Box>
+              </Box>
+           
+
               <InputMask
                 mask={mask}
                 onChange={(e) => setValue(e.target.value)}

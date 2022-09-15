@@ -21,6 +21,15 @@ const theme = createTheme({
           fontSize: 16
         }
       }
+    },
+    MuiCircularProgress: {
+      styleOverrides: {
+        root: {
+          width: 56,
+          height: 56,
+          borderRadius: 10,
+        }
+      }
     }
   }
 })
