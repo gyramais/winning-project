@@ -2,19 +2,20 @@ import React,{ useState } from 'react';
 import Modal from 'react-modal';
 import Form from '../Form/Form'
 
+import santander from '../../assets/santander 1.png'
+import itau from '../../assets/itau.png'
+import bradesco from '../../assets/bradesco.png'
+import caixa from '../../assets/caixa.png'
+import next from '../../assets/next.png'
+
 import "./style.css"
 
 const integrationsImagens = [
-  'src/assets/santander 1.png',
-  'src/assets/itau.png',
-  'src/assets/banco-do-brasil.png',
-  'src/assets/bradesco.png',
-  'src/assets/banco-pan-logo-8 1.png',
-  'src/assets/caixa.png',
-  'src/assets/Logo_Oficial_Banco_Original_-_Verde.png',
-  'src/assets/next.png',
-  'src/assets/nubank.png',
-  'src/assets/neon-logo.png'
+  itau,
+  bradesco,
+  santander,
+  caixa,
+  next,
 ]
 
 // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
@@ -49,7 +50,7 @@ const IntegrationModal:React.FC<{ isOpen: boolean, closeModal: Function}> = ( {i
         { 
         integrationsImagens.map((el)=>(
           <div className='integration-item'>
-            <img src={el} alt="integration item" />
+            <img src={el} alt="integration item"/>
           </div>  
         ))
         }
