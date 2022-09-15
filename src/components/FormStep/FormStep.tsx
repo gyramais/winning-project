@@ -123,7 +123,7 @@ const FormStep: React.FC = () => {
            
 
               <InputMask
-                mask=''
+                mask={mask}
                 onChange={(e) => setValue(e.target.value)}
                 value={value}
               >
