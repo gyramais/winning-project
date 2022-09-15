@@ -1,6 +1,7 @@
 import { Button, Input, TextField } from "@mui/material"
 import { useState } from "react"
 import InputMask from 'react-input-mask';
+import { CSSTransition, SwitchTransition } from "react-transition-group";
 
 const fields = [
   {
@@ -62,26 +63,34 @@ const FormStep: React.FC = () => {
 
       <p className="mt-6">Complete seu cadastro e comprove seu faturamento</p>
 
-      <form 
-        className="flex gap-x-2 justify-center mt-24 w-full px-8" 
-        onSubmit={submitForm}
+      <SwitchTransition>
+        <CSSTransition
+          key={name}
+          addEndListener={(node, done) => node.addEventListener("transitionend", done, false)}
+          classNames='fade'
         >
-          <InputMask
-            mask={mask}
-            onChange={(e) => setValue(e.target.value)}
-            value={value}
-          >
-            <TextField 
-              InputLabelProps={{ required: false }}
-              type={type}
-              label={label}
-              className="flex-1" 
-              helperText="precione enter ou ok"
-              required
-            />
-          </InputMask>
-          <button type="submit">OK</button>
-      </form>
+          <form 
+            className="flex gap-x-2 justify-center mt-24 w-full px-8" 
+            onSubmit={submitForm}
+            >
+              <InputMask
+                mask={mask}
+                onChange={(e) => setValue(e.target.value)}
+                value={value}
+              >
+                <TextField 
+                  InputLabelProps={{ required: false }}
+                  type={type}
+                  label={label}
+                  className="flex-1" 
+                  helperText="precione enter ou ok"
+                  required
+                />
+              </InputMask>
+              <button type="submit">OK</button>
+          </form>
+        </CSSTransition>
+      </SwitchTransition>
     </div>
   )
 }
