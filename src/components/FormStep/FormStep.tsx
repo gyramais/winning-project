@@ -17,7 +17,6 @@ const fields = [
   {
     label: 'Email',
     name: 'email',
-    type: 'email',
   },
   {
     label: 'Telefone',
