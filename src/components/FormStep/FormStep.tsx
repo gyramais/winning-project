@@ -31,13 +31,25 @@ const FormStep: React.FC = () => {
   const [value, setValue] = useState('')
   const [formValues, setValues] = useState({})
 
-  const {label, name, mask = '', type} = fields[currentField];
+
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+  const {label, name, mask = '', type} = fields[currentField] || {};
 
   console.log(formValues)
   
   const nextField = () => {
-    if (currentField === fields.length - 1) {
-      alert('reminou')
+     
+    if (currentField === fields?.length - 1) {
+      openModal()
+      
       return
     }
 
@@ -67,18 +79,9 @@ const FormStep: React.FC = () => {
     },
   };
 
-  const [modalIsOpen, setIsOpen] = useState(false);
-
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
 
   return (
-    <div className="text-center">
+    <div className="text-center" >
       <h1 className="mt-10">Solicite sua proposta</h1>
 
       <p className="mt-6">Complete seu cadastro e comprove seu faturamento</p>
@@ -120,7 +123,7 @@ const FormStep: React.FC = () => {
            
 
               <InputMask
-                mask={mask}
+                mask=''
                 onChange={(e) => setValue(e.target.value)}
                 value={value}
               >
