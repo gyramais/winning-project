@@ -24,9 +24,6 @@ Modal.setAppElement('#root');
 const widgetModal:React.FC<{ isOpen: boolean, closeModal: Function}> = ( {isOpen:modalIsOpen, closeModal}) => {
   const [ step, setStep ] = useState(0)
   const [ params, setParams ] = useState(0)
-  const acessarForm = (step)=>{
-    step
-  }
 
   return (
     <Modal
@@ -54,7 +51,7 @@ const widgetModal:React.FC<{ isOpen: boolean, closeModal: Function}> = ( {isOpen
         { 
         integrationsImagens.map((el)=>(
           <div className='integration-item'>
-            <img src={el} alt="integration item" onClick={()=>} />
+            <img src={el} alt="integration item" />
           </div>  
         ))
         }
