@@ -9,15 +9,12 @@ npm run build
 # navigate into the build output directory
 cd dist
 
-git init
-git checkout -b main
-git add -A
-git commit -m 'deploy'
-
-# if you are deploying to https://<USERNAME>.github.io
-git push -f git@github.com:guiquintelas/guiquintelas.github.io.git main
+# git init
+# git checkout -b main
+# git add -A
+# git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:guiquintelas/winning-project.git main:gh-pages
+git push -f git@github.com:gyramais/winning-project.git main:gh-pages
 
 cd -
